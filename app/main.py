@@ -15,25 +15,6 @@ models.Base.metadata.create_all(bind = engine)
 app = FastAPI()
 
 
-
-
-# while True:
-#     try:
-#         conn = psycopg2.connect(host='localhost', database='post', user='postgres', password='password', cursor_factory=RealDictCursor)
-#         cursor = conn.cursor()
-#         print('db connection success')
-#         break
-#     except Exception as e:
-#         print('db connection failed')
-
-# my_post  = [{"title": "first post", "content": "this is the first post on this site", "id": 1},
-#  {"title": "second poat", "content": "this is the second post on thi site", "id":2}]
-
-
-# @app.get('/sqlalchemy')
-# def test_post(db: Session = Depends(get_db)):
-#     posts = db.query(models.Post).all()
-#     return{"data": posts} 
 @app.get("/")
 def root():
    
